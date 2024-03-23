@@ -1,0 +1,72 @@
+$basePath = "C:\Users\Administrator\Pictures\Projects\SPD\Website"
+
+# Creating directories
+New-Item -ItemType Directory -Force -Path "$basePath\assets\images"
+New-Item -ItemType Directory -Force -Path "$basePath\assets\fonts"
+New-Item -ItemType Directory -Force -Path "$basePath\css"
+New-Item -ItemType Directory -Force -Path "$basePath\js"
+New-Item -ItemType Directory -Force -Path "$basePath\pages"
+
+# Creating files
+$indexContent = @"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soliz Photography and Design</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Soliz Photography and Design</h1>
+    </header>
+    <nav>
+        <!-- Navigation links -->
+    </nav>
+    <main>
+        <!-- Main content -->
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+"@
+
+$cssContent = @"
+/* Basic styling to get started */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav, main, footer {
+    padding: 20px;
+    text-align: center;
+}
+"@
+
+$jsContent = @"
+// Basic JavaScript to get started
+document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('Soliz Photography and Design website initialized');
+});
+"@
+
+# Creating and writing to index.html
+$indexPath = "$basePath\index.html"
+New-Item -Path $indexPath -Force
+Add-Content -Path $indexPath -Value $indexContent
+
+# Creating and writing to styles.css
+$cssPath = "$basePath\css\styles.css"
+New-Item -Path $cssPath -Force
+Add-Content -Path $cssPath -Value $cssContent
+
+# Creating and writing to script.js
+$jsPath = "$basePath\js\script.js"
+New-Item -Path $jsPath -Force
+Add-Content -Path $jsPath -Value $jsContent

@@ -1,0 +1,118 @@
+/* Basic styling and resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    width: 1440px;
+    background-color: white;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation menu styles */
+nav {
+    background-color: black;
+    padding: 10px 0;
+    border-radius: 5px; /* Add rounded corners */
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: black;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 10px;
+    display: block;
+    transition: background-color 0.5s ease, color 0.5s ease, border-radius 0.5s ease; /* Add border-radius to transition */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+nav ul li:hover > a {
+    background-color: red;
+    color: lightgrey; /* Change font color to light grey on hover */
+    text-decoration: underline; /* Underline the font on hover */
+    text-decoration-color: rgb(255, 0, 85); /* Set the color of the underline to blue */
+    box-shadow: 0 0 0 1px rgb(255, 0, 85); /* Add shadow instead of border */
+}
+
+/* Submenu styles for Photography and Design */
+.photography-submenu, .design-submenu {
+    position: absolute;
+    background-color: black;
+    min-width: 110px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s linear 0.5s, transform 0.5s;
+    transform: translateY(-20px);
+    border-radius: 5px; /* Add rounded corners */
+}
+
+nav ul li:hover .photography-submenu, 
+nav ul li:hover .design-submenu {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s; /* Remove delay when showing the menu */
+    transform: translateY(0);
+    border-radius: 10px; /* Add rounded corners when submenu is visible */
+}
+
+/* Submenu item styles */
+nav ul li ul li a {
+    padding-left: 30px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.5s ease;
+    position: relative;
+}
+
+nav ul li ul li a svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul li ul li a:hover {
+    background-color: red;
+}
+
+/* Footer styles */
+footer {
+    background-color: #D3D3D3;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Text alignment for non-nav elements */
+header, main, footer {
+    text-align: left;
+    padding: 20px;
+}
