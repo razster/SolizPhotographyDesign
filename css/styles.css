@@ -13,20 +13,24 @@ body {
 }
 
 .container {
-    width: 1440px;
+    width: 1080px;
     background-color: white;
+    border: 1px solid white; /* Add 1px white border */
+    box-shadow: 0 0 0 1px rgb(255, 0, 85); /* Add shadow instead of border */
 }
 
 /* Header styles */
 header {
     display: flex;
     align-items: center;
+    margin: 0;  /* Remove margin */
+    padding: 0; /* Remove padding */
 }
 
 /* Navigation menu styles */
 nav {
     background-color: black;
-    padding: 10px 0;
+    padding: 5px 0;
     border-radius: 5px; /* Add rounded corners */
 }
 
@@ -44,11 +48,13 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 10px 10px;
+    padding: 10px 45px;
     display: block;
-    transition: background-color 0.5s ease, color 0.5s ease, border-radius 0.5s ease; /* Add border-radius to transition */
+    transition: background-color 0.5s ease, color 0.5s ease, border-radius 0.5s ease;
     border-radius: 10px; /* Add rounded corners */
+    margin-left: 4px; /* Add left margin to the anchor tags */
 }
+
 
 nav ul li:hover > a {
     background-color: red;
@@ -58,19 +64,18 @@ nav ul li:hover > a {
     box-shadow: 0 0 0 1px rgb(255, 0, 85); /* Add shadow instead of border */
 }
 
-/* Submenu styles for Photography and Design */
 .photography-submenu, .design-submenu {
     position: absolute;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.788);
     min-width: 110px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 1px 0px red;
     z-index: 1;
     display: block;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s, visibility 0s linear 0.5s, transform 0.5s;
     transform: translateY(-20px);
-    border-radius: 5px; /* Add rounded corners */
+    border: 1px solid red /* Add 1px white border */
 }
 
 nav ul li:hover .photography-submenu, 
@@ -79,8 +84,9 @@ nav ul li:hover .design-submenu {
     visibility: visible;
     transition-delay: 0s; /* Remove delay when showing the menu */
     transform: translateY(0);
-    border-radius: 10px; /* Add rounded corners when submenu is visible */
+    border-radius: 10px; /* Set top corners to 0 and bottom corners to 5px */
 }
+
 
 /* Submenu item styles */
 nav ul li ul li a {
@@ -90,6 +96,7 @@ nav ul li ul li a {
     display: block;
     transition: background-color 0.5s ease;
     position: relative;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 nav ul li ul li a svg {
@@ -101,6 +108,11 @@ nav ul li ul li a svg {
 
 nav ul li ul li a:hover {
     background-color: red;
+    left: -4px
+}
+
+nav ul li ul li a:hover svg circle {
+    fill: white;
 }
 
 /* Footer styles */
