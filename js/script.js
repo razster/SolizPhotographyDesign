@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
            }
        }, frameRate);
    });
-    
+
+   //Banner Animation Start (Version 1) by Nathan Soliz.
    const aboutLink = document.querySelector('li a[href="about.html"]');
    const banner = document.querySelector('.banner');
    let bannerFrame = 1;
