@@ -1,2 +1,2 @@
-# SolizPhotographyDesign
+# Soliz Photography & Design
 A designers website
