@@ -57,33 +57,55 @@ document.addEventListener('DOMContentLoaded', () => {
        }, frameRate);
    });
     
-    const aboutLink = document.querySelector('li a[href="about.html"]');
-    const banner = document.querySelector('.banner');
-    let bannerFrame = 1;
-    const bannerTotalFrames = 60; // Adjust based on your frame count for the banner
-    let bannerAnimation;
-
-    aboutLink.addEventListener('mouseover', () => {
-        clearInterval(bannerAnimation);
-        bannerAnimation = setInterval(() => {
-            if (bannerFrame >= bannerTotalFrames) {
-                clearInterval(bannerAnimation);
-            } else {
-                bannerFrame++;
-                banner.src = `/assets/images/banner/banner${bannerFrame}.png`;
-            }
-        }, frameRate);
-    });
-
-    aboutLink.addEventListener('mouseout', () => {
-        clearInterval(bannerAnimation);
-        bannerAnimation = setInterval(() => {
-            if (bannerFrame <= 1) {
-                clearInterval(bannerAnimation);
-            } else {
-                bannerFrame--;
-                banner.src = `/assets/images/banner/banner${bannerFrame}.png`;
-            }
-        }, frameRate);
-    });
+   const aboutLink = document.querySelector('li a[href="about.html"]');
+   const banner = document.querySelector('.banner');
+   let bannerFrame = 1;
+   let fpsFolder = "60fps"; // Default folder
+   let animationFrameRate = 1000 / 60; // Use a unique name to avoid conflicts
+   let bannerAnimation;
+   const bannerTotalFrames = 60; // Adjust based on your frame count for the banner
+   
+   // Function to detect screen refresh rate and adjust animationFrameRate and fpsFolder
+   function adjustForRefreshRate() {
+       const refreshRate = window.screen.refreshRate || 60; // Fallback to 60 if not detected
+       if (refreshRate >= 120) {
+           fpsFolder = "120fps";
+           animationFrameRate = 1000 / 120;
+       } else {
+           fpsFolder = "60fps";
+           animationFrameRate = 1000 / 60;
+       }
+   }
+   
+   adjustForRefreshRate();
+   
+   // Function to update banner image
+   function updateBannerImage(increment) {
+       bannerFrame += increment;
+       if (bannerFrame < 1) bannerFrame = 1;
+       if (bannerFrame > bannerTotalFrames) bannerFrame = bannerTotalFrames;
+       banner.src = `/assets/images/banner/${fpsFolder}/banner${bannerFrame}.png`;
+   }
+   
+   aboutLink.addEventListener('mouseover', () => {
+       clearInterval(bannerAnimation);
+       bannerAnimation = setInterval(() => {
+           if (bannerFrame >= bannerTotalFrames) {
+               clearInterval(bannerAnimation);
+           } else {
+               updateBannerImage(1);
+           }
+       }, animationFrameRate);
+   });
+   
+   aboutLink.addEventListener('mouseout', () => {
+       clearInterval(bannerAnimation);
+       bannerAnimation = setInterval(() => {
+           if (bannerFrame <= 1) {
+               clearInterval(bannerAnimation);
+           } else {
+               updateBannerImage(-1);
+           }
+       }, animationFrameRate);
+   });
 });
