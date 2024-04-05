@@ -2,230 +2,155 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* Ensures padding and border are included in the element's dimensions */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
 }
 
 /* Text alignment for header, main, and footer elements */
 header,
 main,
 footer {
-  text-align: left;
-  /* Aligns text to the left */
-  padding: 0;
-  /* Removes padding */
+  text-align: left; /* Aligns text to the left */
+  padding: 0; /* Removes padding */
 }
 
 /* Body styles */
 body {
-  font-family: Arial, sans-serif;
-  /* Sets the font family for the body */
-  display: flex;
-  /* Uses flexbox layout for the body */
-  justify-content: center;
-  /* Centers the content horizontally */
-  background-color: black;
-  /* Sets the background color to black */
+  font-family: Arial, sans-serif; /* Sets the font family for the body */
+  display: flex; /* Uses flexbox layout for the body */
+  justify-content: center; /* Centers the content horizontally */
+  background-color: black; /* Sets the background color to black */
 }
 
 /* Container styles */
 .container {
-  width: 1080px;
-  /* Sets the width of the container */
-  background-color: white;
-  /* Sets the background color to white */
-  border: 1px solid white;
-  /* Adds a 1px white border */
-  box-shadow: 0 0 0 1px rgb(255, 0, 85);
-  /* Adds a shadow for a border-like effect */
+  width: 1080px; /* Sets the width of the container */
+  background-color: white; /* Sets the background color to white */
+  border: 1px solid white; /* Adds a 1px white border */
+  box-shadow: 0 0 0 1px rgb(255, 0, 85); /* Adds a shadow for a border-like effect */
 }
 
 /* Header styles */
 header {
-  display: flex;
-  /* Uses flexbox layout for header */
-  align-items: center;
-  /* Centers items vertically in the header */
-  margin: 0;
-  /* Removes margin */
-  padding: 0;
-  /* Removes padding */
+  display: flex; /* Uses flexbox layout for header */
+  align-items: center; /* Centers items vertically in the header */
+  margin: 0; /* Removes margin */
+  padding: 0; /* Removes padding */
 }
 
 /* Logo styles */
 .logo {
-  width: 150px;
-  /* Sets the width of the logo */
-  height: 150px;
-  /* Sets the height of the logo */
-  flex-shrink: 0;
-  /* Prevents the logo from shrinking */
-  /* Background image for the logo can be set here */
+    width: 150px; /* Sets the width of the logo */
+    height: 150px; /* Sets the height of the logo */
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+    /* Background image for the logo can be set here */
 }
 
 /* Banner styles */
 .banner {
-  width: 928px;
-  /* Sets the width of the banner */
-  height: 150px;
-  /* Sets the height of the banner */
-  flex-shrink: 0;
-  /* Prevents the banner from shrinking */
+  width: 928px; /* Sets the width of the banner */
+  height: 150px; /* Sets the height of the banner */
+  flex-shrink: 0; /* Prevents the banner from shrinking */
   /* Background image for the banner can be set here */
 }
 
 /* Navigation menu styles */
 nav {
-  background-color: black;
-  /* Sets the background color of the nav */
-  padding: 5px 0;
-  /* Adds vertical padding */
-  border-radius: 5px;
-  /* Rounds the corners */
+  background-color: black; /* Sets the background color of the nav */
+  padding: 5px 0; /* Adds vertical padding */
+  border-radius: 5px; /* Rounds the corners */
 }
 
 nav ul {
-  list-style-type: none;
-  /* Removes bullet points */
-  background-color: black;
-  /* Sets the background color */
-  display: flex;
-  /* Enables flexbox layout */
-  position: relative;
-  /* Positions the nav relative to its normal position */
+  list-style-type: none; /* Removes bullet points */
+  background-color: black; /* Sets the background color */
+  display: flex; /* Enables flexbox layout */
+  position: relative; /* Positions the nav relative to its normal position */
 }
 
 nav ul li {
-  display: inline-flex;
-  /* Displays list items inline using flex */
-  position: relative;
-  /* Positions list items relative to their normal position */
+  display: inline-flex; /* Displays list items inline using flex */
+  position: relative; /* Positions list items relative to their normal position */
 }
 
 /* Styles for links in the nav */
 nav ul li a {
-  text-decoration: none;
-  /* Removes underline from links */
-  color: white;
-  /* Sets the text color to white */
-  padding: 10px 45px;
-  /* Adds padding */
-  display: block;
-  /* Makes the link fill the li */
-  transition: background-color 0.5s ease, color 0.5s ease, border-radius 0.5s ease;
-  /* Adds transition for hover effects */
-  border-radius: 10px;
-  /* Rounds the corners */
-  margin-left: 4px;
-  /* Adds left margin */
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Sets the text color to white */
+  padding: 10px 45px; /* Adds padding */
+  display: block; /* Makes the link fill the li */
+  transition: background-color 0.5s ease, color 0.5s ease, border-radius 0.5s ease; /* Adds transition for hover effects */
+  border-radius: 10px; /* Rounds the corners */
+  margin-left: 4px; /* Adds left margin */
 }
 
 /* Hover styles for nav links */
-nav ul li:hover>a {
-  background-color: red;
-  /* Changes background color on hover */
-  color: lightgrey;
-  /* Changes text color on hover */
-  text-decoration: underline;
-  /* Underlines text on hover */
-  text-decoration-color: rgb(255, 0, 85);
-  /* Sets the underline color */
-  box-shadow: 0 0 0 1px rgb(255, 0, 85);
-  /* Adds shadow for an effect similar to border */
+nav ul li:hover > a {
+  background-color: red; /* Changes background color on hover */
+  color: lightgrey; /* Changes text color on hover */
+  text-decoration: underline; /* Underlines text on hover */
+  text-decoration-color: rgb(255, 0, 85); /* Sets the underline color */
+  box-shadow: 0 0 0 1px rgb(255, 0, 85); /* Adds shadow for an effect similar to border */
 }
 
 /* Submenu styles */
 .photography-submenu,
 .design-submenu {
-  position: absolute;
-  /* Absolutely positions the submenus */
-  background-color: rgba(0, 0, 0, 0.788);
-  /* Sets the background with opacity */
-  min-width: 110px;
-  /* Sets a minimum width */
-  box-shadow: 0px 2px 1px 0px red;
-  /* Adds a shadow */
-  z-index: 1;
-  /* Ensures the submenu is above other content */
-  display: block;
-  /* Displays the submenu */
-  opacity: 0;
-  /* Initially hidden */
-  visibility: hidden;
-  /* Also initially hidden */
-  transition: opacity 0.5s, visibility 0s linear 0.5s, transform 0.5s;
-  /* Transition for showing submenu */
-  transform: translateY(-20px);
-  /* Positions the submenu above its normal position */
-  border: 1px solid red;
-  /* Adds a border */
+  position: absolute; /* Absolutely positions the submenus */
+  background-color: rgba(0, 0, 0, 0.788); /* Sets the background with opacity */
+  min-width: 110px; /* Sets a minimum width */
+  box-shadow: 0px 2px 1px 0px red; /* Adds a shadow */
+  z-index: 1; /* Ensures the submenu is above other content */
+  display: block; /* Displays the submenu */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Also initially hidden */
+  transition: opacity 0.5s, visibility 0s linear 0.5s, transform 0.5s; /* Transition for showing submenu */
+  transform: translateY(-20px); /* Positions the submenu above its normal position */
+  border: 1px solid red; /* Adds a border */
 }
 
 /* Hover styles for showing the submenus */
 nav ul li:hover .photography-submenu,
 nav ul li:hover .design-submenu {
-  opacity: 1;
-  /* Makes the submenu visible */
-  visibility: visible;
-  /* Makes the submenu visible */
-  transition-delay: 0s;
-  /* Removes transition delay */
-  transform: translateY(0);
-  /* Moves the submenu to its normal position */
-  border-radius: 10px;
-  /* Rounds the corners */
+  opacity: 1; /* Makes the submenu visible */
+  visibility: visible; /* Makes the submenu visible */
+  transition-delay: 0s; /* Removes transition delay */
+  transform: translateY(0); /* Moves the submenu to its normal position */
+  border-radius: 10px; /* Rounds the corners */
 }
 
 /* Submenu item styles */
 nav ul li ul li a {
-  padding-left: 30px;
-  /* Adds left padding */
-  color: white;
-  /* Sets text color */
-  text-decoration: none;
-  /* Removes underline */
-  display: block;
-  /* Makes the link fill the li */
-  transition: background-color 0.5s ease;
-  /* Adds transition for hover effect */
-  position: relative;
-  /* Positions the link relative to its normal position */
+  padding-left: 30px; /* Adds left padding */
+  color: white; /* Sets text color */
+  text-decoration: none; /* Removes underline */
+  display: block; /* Makes the link fill the li */
+  transition: background-color 0.5s ease; /* Adds transition for hover effect */
+  position: relative; /* Positions the link relative to its normal position */
 }
 
 /* Styles for SVG icons in submenu items */
 nav ul li ul li a svg {
-  position: absolute;
-  /* Positions the SVG absolutely within the link */
-  left: 10px;
-  /* Positions the SVG from the left */
-  top: 50%;
-  /* Centers the SVG vertically */
-  transform: translateY(-50%);
-  /* Ensures the SVG is centered */
+  position: absolute; /* Positions the SVG absolutely within the link */
+  left: 10px; /* Positions the SVG from the left */
+  top: 50%; /* Centers the SVG vertically */
+  transform: translateY(-50%); /* Ensures the SVG is centered */
 }
 
 /* Hover styles for submenu items */
 nav ul li ul li a:hover {
-  background-color: red;
-  /* Changes background color on hover */
-  left: -4px;
-  /* Moves the link slightly to the left on hover */
+  background-color: red; /* Changes background color on hover */
+  left: -4px; /* Moves the link slightly to the left on hover */
 }
 
 /* Changes the SVG circle color on hover */
 nav ul li ul li a:hover svg circle {
-  fill: white;
-  /* Changes the fill color to white */
+  fill: white; /* Changes the fill color to white */
 }
 
 /* Footer styles */
 footer {
-  background-color: #d3d3d3;
-  /* Sets the background color */
-  color: black;
-  /* Sets the text color */
-  text-align: center;
-  /* Centers the text */
-  padding: 20px;
-  /* Adds padding */
+  background-color: #d3d3d3; /* Sets the background color */
+  color: black; /* Sets the text color */
+  text-align: center; /* Centers the text */
+  padding: 20px; /* Adds padding */
 }
